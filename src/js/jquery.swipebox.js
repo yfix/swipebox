@@ -777,7 +777,6 @@
 					youtubeShortUrl = url.match(/youtu\.be\/([a-zA-Z0-9\-_]+)/),
 					vimeoUrl = url.match( /vimeo\.com\/([0-9]*)/ ),
                     mp4Url = url.toLowerCase().indexOf( ".mp4" ) >= 0;
-            console.log(youtubeUrl);
 				if ( youtubeUrl || youtubeShortUrl) {
 					if ( youtubeShortUrl ) {
 						youtubeUrl = youtubeShortUrl;
