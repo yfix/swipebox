@@ -73,9 +73,12 @@
 				ui.init( plugin.settings.initialIndexOnArray );
 
 			} else {
-
-				$( document ).on( 'click', selector, function( event ) {
-
+//				$( document ).off( 'click', selector);
+//				$( document ).on( 'click', selector, function( event ) {
+                
+				$( selector ).unbind( 'click');
+				$( selector ).bind( 'click', function( event ) {
+                    console.log('evnt');
 					// console.log( isTouch );
 
 					if ( event.target.parentNode.className === 'slide current' ) {
@@ -134,6 +137,8 @@
 					event.stopPropagation();
 					ui.target = $( event.target );
 					ui.init( index );
+                    
+                    return false;
 				} );
 			}
 		};
