@@ -78,7 +78,6 @@
                 
 				$( selector ).unbind( 'click');
 				$( selector ).bind( 'click', function( event ) {
-                    console.log('evnt');
 					// console.log( isTouch );
 
 					if ( event.target.parentNode.className === 'slide current' ) {
@@ -575,6 +574,10 @@
 					$( '#swipebox-prev' ).bind( action, function( event ) {
 						event.preventDefault();
 						event.stopPropagation();
+                        $(".slide.current iframe").each(function() { 
+                            var src= $(this).attr('src');
+                            $(this).attr('src',src);  
+                        });
 						$this.getPrev();
 						$this.setTimeout();
 					} );
@@ -582,6 +585,10 @@
 					$( '#swipebox-next' ).bind( action, function( event ) {
 						event.preventDefault();
 						event.stopPropagation();
+                        $(".slide.current iframe").each(function() { 
+                            var src= $(this).attr('src');
+                            $(this).attr('src',src);  
+                        });
 						$this.getNext();
 						$this.setTimeout();
 					} );
@@ -651,10 +658,6 @@
 			 * Set a time out if the media is a video
 			 */
 			preloadMedia : function ( index ) {
-               $("iframe").each(function() { 
-                    var src= $(this).attr('src');
-                    $(this).attr('src',src);  
-                });
                 $('video').each(function() {
                     $(this).get(0).pause();
                 });
