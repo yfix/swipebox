@@ -801,7 +801,7 @@
                     
                 } else if (mp4Url) {
 //                    iframe = '<iframe width="560" height="315" src="' + url + '" frameborder="0" allowfullscreen></iframe>';
-                    iframe = '<video width="auto" height="480" controls><source src="' + url + '" type="video/mp4"></video>';
+                    iframe = '<video width="auto" height="480" controls><source src="' + url + '" type="video/mp4" preload="none"></video>';
                 } else {
                     iframe = '<iframe width="560" height="315" src="' + url + '" frameborder="0" allowfullscreen></iframe>';
                 }
