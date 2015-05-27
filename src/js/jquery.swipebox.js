@@ -802,7 +802,7 @@
                 } else if (mp4Url) {
 //                    iframe = '<iframe width="560" height="315" src="' + url + '" frameborder="0" allowfullscreen></iframe>';
                     var url_poster = url.replace('.mp4','.jpeg');
-                    iframe = '<video width="auto" height="480" controls><source src="' + url + '" poster="' + url_poster + '" type="video/mp4" preload="none"></video>';
+                    iframe = '<video width="auto" height="480" poster="' + url_poster + '" preload="none" controls><source src="' + url + '" type="video/mp4"></video>';
                 } else {
                     iframe = '<iframe width="560" height="315" src="' + url + '" frameborder="0" allowfullscreen></iframe>';
                 }
